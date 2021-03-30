@@ -10,12 +10,11 @@ const useFetchGifs = (category) => {
   useEffect(() => { //Se ejecuta esto cuando el componente se renderiza por 1ra vez
     getGifs(category)
       .then(imgs => {
-        setTimeout(() => {
-          setState({
-            data: imgs,
-            loading: false,
-          });
-        }, 3000);
+        setState({
+          data: imgs,
+          loading: false,
+        });
+
       });
   }, [category]);
 
