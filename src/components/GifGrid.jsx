@@ -2,7 +2,11 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
 
+import GifGridItem from './GifGridItem';
+
 const GifGrid = ({ category }) => {
+
+  const [images, setImages] = useState([]);
 
   useEffect(() => { //Se ejecuta esto cuando el componente se renderiza por 1ra vez
     getGifs();
@@ -21,10 +25,20 @@ const GifGrid = ({ category }) => {
       }
     })
     console.log(gifs);
+    setImages(gifs);
   }
   return (
     <div>
       <h3>{category}</h3>
+
+      {images.map((img) => (
+        <GifGridItem
+          key={img.id}
+          {...img}
+        />
+      ))
+      }
+
     </div>
   )
 }
