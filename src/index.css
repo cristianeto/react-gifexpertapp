@@ -10,3 +10,27 @@ input {
   color: grey;
   width: 100%;
 }
+
+.card{
+  align-content: center;
+  border: 1px solid gray;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+.card-grid{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card p {
+  padding: .5rem;
+  text-align: center;
+}
+
+.card img{
+  height: 15rem;
+  width: auto;
+}
