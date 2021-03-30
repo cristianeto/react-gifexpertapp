@@ -1,6 +1,11 @@
 import React from 'react'
+import { useEffect } from 'react';
 
 const GifGrid = ({ category }) => {
+
+  useEffect(() => { //Se ejecuta esto cuando el componente se renderiza por 1ra vez
+    getGifs();
+  }, []);
 
   const getGifs = async () => {
     const url = "https://api.giphy.com/v1/gifs/search?limit=10&q=Rick ann morty&api_key=CTultUNDaOlOTkVSr2pou3ItXZVBWFxZ";
@@ -17,7 +22,7 @@ const GifGrid = ({ category }) => {
     console.log(gifs);
   }
 
-  getGifs();
+
   return (
     <div>
       <h3>{category}</h3>
